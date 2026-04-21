@@ -1,1 +1,1 @@
-#RPS and Guess the number arcade.
+#RPS and Guess the number arcade
