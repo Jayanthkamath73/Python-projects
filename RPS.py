@@ -29,6 +29,37 @@ def rps(name ="PlayerOne"):
 
         computer = int(computer_choice)
 
+        print(f"\n {name} you chose {str(rps(player)).replace('rps.','').title()}")
+
+        print(f"\n Python chose {str(rps(computer)).replace('rps.','').title()}")
+
+        def decide_winner(player,computer):
+            nonlocal name
+            nonlocal player_wins
+            nonlocal computer_wins
+
+            if player == 1 and computer == 3:
+                player_wins += 1
+                return f"{name} wins!!!"
+            elif player ==2 and computer ==1:
+                player_wins += 1
+                return f"{name} wins!!!"
+            elif player == 3 and computer == 2:
+                player_wins += 1
+                return f"{name} wins!!!"
+            elif player == computer :
+                return "Tie game!!!"
+            else :
+                computer_wins += 1
+                return f"Python wins... {name} sorry :/"
+        game_result = decide_winner(player,computer)
+        print(game_result)
+
+        game_count += 1
+
         
+
+
+
 
     
