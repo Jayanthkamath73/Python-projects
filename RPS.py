@@ -57,7 +57,40 @@ def rps(name ="PlayerOne"):
 
         game_count += 1
 
-        
+        print(f"\n{name} wins :{player_wins}")
+        print(f"\nComputer wins :{computer_wins}")
+        print("\nGame count :{game_count}")
+
+        print(f"\n{name} do you to play again ?")
+
+        while True:
+            play_again = input("\n Y for Yes or N or No \n")
+            if play_again.lower() not in ["y","n"]:
+                continue
+            else :
+                break
+
+        if play_again.lower() == "y":
+            return play_rps()
+        else :
+            print("\n Hope you had a great time! \n Thank you for playing")
+            if __name__ == "__main__":
+                sys.exit(f"Bye {name}")
+            else:
+                return
+    return play_rps()
+
+if __name__ == "__main__" :
+    import argparse
+    parser = argparse.ArgumentParser(description = "Providesa personalised game experience.")
+    parser.add_argument('-n','--name', metavar ='name', required =True, help ='The name of the person playing the game.')
+
+    args = parser.parse_args()
+
+    Rock_paper_scissors = rps(args.name)
+    Rock_paper_scissors()
+
+
 
 
 
